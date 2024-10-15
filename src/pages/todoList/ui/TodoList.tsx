@@ -33,7 +33,11 @@ export const TodoList = () => {
       <Title>todos</Title>
       <WrapList>
         <AddItemInput onAddTodo={handleAddTodo} />
-        <List todos={filteredTodos} toggleTodo={handleToggleTodo} />
+        <List
+          todos={filteredTodos}
+          toggleTodo={handleToggleTodo}
+          visibilityFilter={visibilityFilter}
+        />
         <Footer
           todos={todos}
           onSetVisibilityFilter={setVisibilityFilter}

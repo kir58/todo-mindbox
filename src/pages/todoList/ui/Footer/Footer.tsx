@@ -29,28 +29,31 @@ export const Footer = ({
       <CounterText $isVisible={!!leftItemsCount}>{leftItemsText}</CounterText>
       <div>
         <Button
+          isActive={isAllFilter}
           dataTestId="allButton"
-          disabled={isAllFilter}
+          isDisabled={isAllFilter}
           onClick={() => onSetVisibilityFilter('all')}
         >
           All
         </Button>
         <Button
           dataTestId="activeButton"
-          disabled={isActiveFilter}
+          isActive={isActiveFilter}
+          isDisabled={isActiveFilter}
           onClick={() => onSetVisibilityFilter('active')}
         >
           Active
         </Button>
         <Button
           dataTestId="completedButton"
-          disabled={isCompletedFilter}
+          isActive={isCompletedFilter}
+          isDisabled={isCompletedFilter}
           onClick={() => onSetVisibilityFilter('completed')}
         >
           Completed
         </Button>
       </div>
-      <Button dataTestId="clearButton" disabled={isDisabledClear} onClick={onClearCompleted}>
+      <Button dataTestId="clearButton" isDisabled={isDisabledClear} onClick={onClearCompleted}>
         Clear Completed
       </Button>
     </BottomContainer>

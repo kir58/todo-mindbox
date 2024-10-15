@@ -6,3 +6,11 @@ export const getFilteredTodos = (todos: ItemType[], visibilityFilter: Visibility
     if (visibilityFilter === 'completed') return todo.isCompleted;
     return true;
   });
+
+export const getNoDataText = (visibilityFilter: VisibilityFilter) => {
+  if (visibilityFilter === 'all') {
+    return 'Not Items';
+  }
+
+  return visibilityFilter === 'active' ? 'Not Active Items' : 'Not Completed Items';
+};

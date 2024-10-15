@@ -4,7 +4,7 @@ const borderStyle = css`
   border: ${({ theme }) => `1px solid ${theme.palette.primary.main}`};
   border-radius: 4px;
 `;
-export const StyledButton = styled.button`
+export const StyledButton = styled.button<{ $isActive?: boolean }>`
   padding: 4px 8px;
   border: 1px solid transparent;
   background-color: transparent;
@@ -17,11 +17,18 @@ export const StyledButton = styled.button`
     color 0.3s;
   &:hover {
     ${borderStyle};
+    opacity: 0.8;
   }
-  &:focus {
+
+  &:active {
     ${borderStyle};
   }
   &:disabled {
     cursor: not-allowed;
   }
+  ${({ $isActive }) =>
+    $isActive &&
+    css`
+      ${borderStyle};
+    `}
 `;

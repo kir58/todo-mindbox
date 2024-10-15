@@ -41,3 +41,9 @@ export const StyledList = styled.ul`
   max-height: 60vh;
   overflow-y: auto;
 `;
+
+export const NoData = styled.div`
+  display: flex;
+  justify-content: center;
+  color: ${({ theme }) => theme.palette.secondary.main};
+`;

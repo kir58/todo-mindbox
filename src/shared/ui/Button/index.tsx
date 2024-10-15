@@ -3,13 +3,25 @@ import { StyledButton } from './styled.ts';
 
 type ButtonProps = PropsWithChildren<{
   onClick: () => void;
-  disabled?: boolean;
+  isDisabled?: boolean;
   dataTestId?: string;
+  isActive?: boolean;
 }>;
 
-export const Button: FC<ButtonProps> = ({ children, dataTestId, onClick, disabled }) => {
+export const Button: FC<ButtonProps> = ({
+  children,
+  dataTestId,
+  onClick,
+  isDisabled,
+  isActive,
+}) => {
   return (
-    <StyledButton data-testid={dataTestId} disabled={disabled} onClick={onClick}>
+    <StyledButton
+      $isActive={isActive}
+      data-testid={dataTestId}
+      disabled={isDisabled}
+      onClick={onClick}
+    >
       {children}
     </StyledButton>
   );
