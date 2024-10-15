@@ -9,7 +9,7 @@ interface TodoListProps {
 }
 
 export const List: React.FC<TodoListProps> = ({ todos, toggleTodo }) => (
-  <StyledList>
+  <StyledList data-testid="list">
     {todos.map((todo) => (
       <Item key={todo.id} data={todo} toggleTodo={toggleTodo} />
     ))}

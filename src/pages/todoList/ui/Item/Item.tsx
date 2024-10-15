@@ -11,6 +11,7 @@ interface TodoItemProps {
 export const Item: React.FC<TodoItemProps> = ({ data: { isCompleted, text, id }, toggleTodo }) => (
   <StyledItem>
     <Checkbox
+      dataTestId={text}
       checked={isCompleted}
       onChange={() => toggleTodo(id)}
       label={<Text $isChecked={isCompleted}>{text}</Text>}
