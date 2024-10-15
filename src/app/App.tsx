@@ -1,6 +1,6 @@
 import { theme } from './theme.ts';
 
-import { TodoList } from '../pages/todoList/ui/TodoList.tsx';
+import { TodoList } from '../pages/todoList';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './global.styled.ts';
 
